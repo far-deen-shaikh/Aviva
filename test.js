@@ -17,7 +17,7 @@ app.post('/api/zoho/aviva', (req, res) => {
 
     res.status(200).send({
         payload: req.body,
-        message: "Data Transfer Successful"
+        message: "Successful"
     });
 })
 
