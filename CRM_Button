@@ -1,0 +1,33 @@
+// test id : 5940192000000923400
+// Data Transfer
+details = zoho.crm.getRecordById("AVIVA",Aid);
+// Customer_Name = details.get("Customer_Name");
+// Customer_Email = details.get("Email");
+// Customer_Phone = details.get("Mobile_Number");
+// Customer_Address = details.get("Address");
+// Customer_City = details.get("City");
+// Customer_State = details.get("State");
+// Customer_Country = details.get("Country");
+// Customer_Zipcode = details.get("Zip_Code");
+// Customer_Status = details.get("Status");
+// Customer_ER = details.get("External_Reference");
+Server_Url = "https://testaviva.onrender.com/api/zoho/aviva";
+headers = Map();
+headers.put("Content-Type","application/json");
+response = invokeurl
+[
+	url :Server_Url
+	type :POST
+	parameters:details.toString()
+	headers:headers
+];
+status = response.get("message");
+vStatus = false;
+if(status == "Successful")
+{
+	vStatus = true;
+}
+updateMap = {"External_reference1":status,"Status":vStatus};
+updaterecord = zoho.crm.updateRecord("AVIVA",Aid,updateMap);
+info updaterecord;
+return '';
