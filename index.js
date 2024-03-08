@@ -32,9 +32,9 @@ app.get('/api/zoho/aviva/createupdate', async(req, res) => {
     const accessToken = await getAccessToken();
 
     const payload = {data: [{
-        Name: "TestingNew Test",
-        Email: "email@randomdomain.ae",
-        Mobile_Number: "+971544712370"
+        Name: "Fardeen Shaikh",
+        Email: "fardeen@randomdomain.ae",
+        Mobile_Number: "+971123456789"
     }]};
 
     const url = `${zohoURL}/crm/v2/Aviva`;
